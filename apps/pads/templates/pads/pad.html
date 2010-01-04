@@ -1,0 +1,44 @@
+{% extends 'pads/base.html' %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/pads.css" />
+
+{% endblock %}
+
+{% block body %}
+<div class="clock"></div>
+<h3 id="padtitle">Pad: <i>{{ pad.title }}</i></h3>
+<!--
+TODO:
+- Attach event to editing: send messages, disallow edits for other + timeout
+- Save on  button? Keep revisions. Show in pop-up window.
+-->
+<div id="textarea_a" class="textarea span-12">
+    <a href="#" class="save-click">CLICK to SAVE</a>
+    <textarea class='colab'>{{ textarea_a.content }}</textarea>
+</div>
+
+{% endblock %}
+
+{% block extra_body %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cookie.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/Orbited.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/JSON.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/protocols/stomp/stomp.js"></script>
+    <script>
+        TCPSocket = Orbited.TCPSocket;
+        CHANNEL_ID = "{{ CHANNEL_NAME }}";
+        CHANNEL_NAME = "/topic/{{ CHANNEL_NAME }}";
+        HOST = "{{ HOST }}";
+        STOMP_PORT = {{ STOMP_PORT }};
+        USERNAME = "{{ user }}";
+        SESSION_COOKIE_NAME = "{{ SESSION_COOKIE_NAME }}"; 
+    </script>
+    <!-- STOMP messaging -->
+    <script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
+    <!-- CHAT -->
+    <link rel="stylesheet" href="{{ STATIC_URL }}chat/chat.css" type="text/css" />
+    <script type="text/javascript" src="{{ STATIC_URL }}chat/chat.js"></script>
+
+{% endblock %}

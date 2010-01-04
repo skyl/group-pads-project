@@ -1,0 +1,26 @@
+{% extends 'pads/base.html' %}
+
+{% block head_title %}Create a New Pad{% endblock %}
+
+{% block body %}
+    
+  <div id="header" class="span-24 last"><h1>Create a New Pad!</h1></div>
+
+  <div id="container" class="container"> 
+
+    <div id="pads-new" class="span-24 pads">
+        <form action="" method="POST">
+        {% if pad_form.errors.extra %}
+            <p class="extra_errors">{{ pad_form.errors.extra }}</p>
+        {% endif %}
+        <p><b>Pad Name:</b>
+            <div class="entry">{{ pad_form.title }}</div>
+            <div class="tip">(Make it metamentational!)</div>
+        </p>
+        <p> <input type="submit" value="Submit" /></p>
+        </form>
+    </div>
+
+  </div><!-- end #container -->
+
+{% endblock %}
