@@ -1,0 +1,84 @@
+span.k {
+    color:#c44e00;
+}
+
+span.s {
+    color: #8b8543;
+}
+
+span.n {
+color:#0b4f86;
+}
+
+span.o {
+    color: #e78543;
+}
+
+span.c {
+color:#00004d;
+}
+
+span.nn {
+color:#0e652a;
+}
+
+span.ow {
+color:#7a004b;
+}
+
+span.kn {
+color:#350635;
+}
+span.nd {
+color:#4b3336;
+}
+span.nf {
+color: #58351d;
+}
+span.bp {
+color:#20813a;
+}
+span.sd {
+color:#4b3354;
+}
+div.codeblock {
+    margin-left: 3em;
+}
+span.cp {
+color:#00004b;
+}
+span.nv {
+color:#5c709a;
+}
+span.nt {
+color:#85152d;
+}
+span.na {
+color:#3e6825;
+}
+span.s1 {
+color:#2b0b39;
+}
+
+span.go {
+color:#680a05;
+}
+
+span.gp {
+color:#dfac26;
+}
+span.p, span.c1 {
+color:#00004d;
+}
+span.nb {
+color:#50004d;
+}
+/*
+span.sr {
+color:#c42700;
+}
+*/
+
+td.linenos {
+    padding-right: 0.8em;
+}

@@ -12,8 +12,12 @@
 TODO:
 - Attach event to editing: send messages, disallow edits for other + timeout
 - Save on  button? Keep revisions. Show in pop-up window.
+- Choose markup and render onkeyup
+- multiple textareas per pad
 -->
 <div id="textarea_a" class="textarea span-12">
+    <a href="{% url pads_render textarea_id=textarea_a.id %}?markup=markdown">View as markdown</a>
+    <a href="{% url pads_render textarea_id=textarea_a.id %}?markup=restructuredtext">View as reST</a>
     <a href="#" class="save-click">CLICK to SAVE</a>
     <textarea class='colab'>{{ textarea_a.content }}</textarea>
 </div>

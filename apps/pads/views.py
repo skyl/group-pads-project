@@ -1,6 +1,6 @@
 import django
-from django.http import HttpResponseRedirect, Http404
-from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect, Http404, HttpResponse
+from django.shortcuts import render_to_response, get_object_or_404
 from django.db import IntegrityError
 from django.conf import settings
 from django.core.urlresolvers import reverse
@@ -144,4 +144,17 @@ def add(request, app_label, model_name, id):
             form_class = PadForm,
             template_name = 'pads/new.html',
             extra_context = locals(),
+    )
+
+def render(request, textarea_id):
+    '''Render the textarea with the given markup'''
+    # TODO: keep things private on demand
+    ta = get_object_or_404(TextArea, id=textarea_id)
+    markup = request.GET.get('markup', 'restructuredtext')
+
+    return object_detail(request,
+            queryset = TextArea.objects.all(),
+            object_id = ta.id,
+            template_name = 'pads/pad_render.html',
+            extra_context = locals()
     )
